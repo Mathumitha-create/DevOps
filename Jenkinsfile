@@ -25,8 +25,8 @@ pipeline {
 
         stage('Deploy to Tomcat') {
             steps {
-                sh 'sudo cp target/*.war /opt/tomcat/webapps/'
-                sh 'sudo systemctl restart tomcat'
+                sh 'sudo cp -n target/*.war /opt/tomcat/webapps/'
+                sh 'sudo -n systemctl restart tomcat'
             }
         }
     }
